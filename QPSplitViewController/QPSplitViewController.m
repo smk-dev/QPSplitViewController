@@ -140,11 +140,13 @@
 - (void)setLeftSplitWidth:(CGFloat)leftSplitWidth {
     [_splitView setLeftSplitWidth:leftSplitWidth];
     _leftSplitWidth = leftSplitWidth;
+    _rightSplitWidth = _splitView.rightView.frame.size.width;
 }
 
 - (void)setRightSplitWidth:(CGFloat)rightSplitWidth {
     [_splitView setRightSplitWidth:rightSplitWidth];
     _rightSplitWidth = rightSplitWidth;
+    _leftSplitWidth = _splitView.leftView.frame.size.width;
 }
 
 #pragma mark - Rotation Support
