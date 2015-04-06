@@ -38,6 +38,23 @@
 {
     return [self initWithLeftViewController:nil rightViewController:nil];
 }
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        CGRect frame = [[UIScreen mainScreen] bounds];
+        
+        // default left width = 260f
+        _leftSplitWidth = 260;
+        _rightSplitWidth = frame.size.width - _leftSplitWidth;
+        _splitView = [[QPSplitView alloc] initWithFrame:frame controller:self];
+        _splitView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        [self initLeftViewController:nil];
+        [self initRightViewController:nil];
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

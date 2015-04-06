@@ -31,3 +31,23 @@ Split View Controller (like Settings app) for iOS
     // Change left or right split width
     self.qp_splitViewController.leftSplitWidth = 320.0;
 ```
+
+<h1>ALTERNATIVE (STORYBOARD):</h1><br>
+
+<h2>1. Main Controller</h2>
+
+```
+    Create UIViewController in Storyboard and set class to QPSplitViewController
+```
+
+<h2>2. Left side</h2>
+
+```
+    Create another UIViewController in Storyboard. Then create segue from main controller to current one. Choose type of segue "Custom", segue class "QPSplitViewControllerSegue" and identifier "qp_left".
+```
+
+<h2>3. Right side</h2>
+
+```
+    Repeat step 2 but change identifier to "qp_right"
+```
